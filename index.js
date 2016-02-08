@@ -8,13 +8,13 @@ var express = require('express')
   , os = require('os')
   , getmac = require('getmac')
   , request = require('request')
-
+  , ip = require('ip')
 // configuration
 
 var hardtwareURL = 'http://dc2.hardtware.com/version/latest.json'
   , PORT = 8765
   , statusDC2 =
-    { version: 1.0              // this is the version of this software
+    { version: "1.0"            // this is the version of this software
     , latestVersion: 'unknown'  // latest version available
     }
 
@@ -31,28 +31,6 @@ app.listen( PORT, function () {
   console.log('Listening on port', PORT)
 })
 
-
-
-
-
-// get the IP address
-function getIP () {
-
-  // we are assuming the interface is just the ethernet interface
-
-  var interfaces = os.networkInterfaces()
-    , en0 = interfaces && interfaces.en0
-
-console.log('interfaces:', interfaces )
-
-  if (!en0 || !en0.length )
-    return('not found')
-  for ( var i = 0; i<en0.length; i++ ) {
-    if ( en0[ i ].family === 'IPv4' )
-      return ( en0[ i ].address )
-  }
-  return 'not found'
-}
 
 // gets MAC address and puts it into status
 function getMAC ( done ) {
@@ -92,7 +70,7 @@ function callHome () {
 
 // fetch local config
 statusDC2.hostname = os.hostname()
-statusDC2.ip = getIP()
+statusDC2.ip = ip.address()
 getMAC( callHome )
 
 
