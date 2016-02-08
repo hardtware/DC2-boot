@@ -7,11 +7,11 @@ var express = require('express')
   , app = express()
   , os = require('os')
   , getmac = require('getmac')
-  , util = require('util')
+  , request = require('request')
 
 // configuration
 
-var hardtwareURL = 'localhost:8765/register'
+var hardtwareURL = 'http://dc2.hardtware.com/version/latest.json'
   , PORT = 8765
   , statusDC2 =
     { version: 1.0              // this is the version of this software
@@ -71,7 +71,23 @@ function getMAC ( done ) {
 // call home
 // check for latest version and register for discovery
 function callHome () {
-  console.log('status:', statusDC2 )
+  var options =
+    { url:   hardtwareURL
+    , qs:    statusDC2
+    , json:  true
+    }
+  request( options, function ( error, response, json ) {
+    if ( error ) {
+      statusDC2.callHomeError = error
+      return console.error( error )
+    }
+    statusDC2.callHomeResponse = response && response.statusCode
+    if ( !response || 200 != response.statusCode ) {
+      return console.error( response )
+    }
+    statusDC2.latestVersion = json && json.version
+    console.log('status:', statusDC2 )
+  })
 }
 
 // fetch local config

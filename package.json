@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hardtware/DC2-boot",
   "dependencies": {
-    "getmac": "^1.0.7"
+    "getmac": "^1.0.7",
+    "request": "^2.69.0"
   }
 }
