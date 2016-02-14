@@ -1,0 +1,7 @@
+#!/bin/sh
+adduser --quiet --system --no-create-home --group --home /home/dc2-boot dc2-boot
+touch /var/log/dc2-boot.log
+chown dc2-boot:dc2-boot /var/log/dc2-boot.log
+chmod 644 /var/log/dc2-boot.log
+update-rc.d -f dc2-boot defaults
+

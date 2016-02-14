@@ -1,0 +1,9 @@
+Version: 1.0-0
+Section: base
+Priority: optional
+Architecture: all
+Depends: nodejs
+Maintainer: Aaron Bannert <aaron-github@clove.org>
+Description: DC2 Boot NodeJS Application
+ Provides a nodejs application for managing DC2 machines from Hardtware.
+
