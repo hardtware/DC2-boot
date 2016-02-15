@@ -1,0 +1,12 @@
+dc2-boot (1.0-1) trusty; urgency=medium
+
+  * Updates to debian source package configuration.
+  * Updates to the source filesystem structure.
+
+ -- Dick Hardt <dick@hardtware.com>  Sun, 14 Feb 2016 21:15:55 -0800
+
+dc2-boot (1.0-0) trusty; urgency=low
+
+  * Initial release.
+
+ -- Dick Hardt <dick@hardtware.com>  Sun, 14 Feb 2016 17:47:23 -0800

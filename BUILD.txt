@@ -1,0 +1,10 @@
+Maintaining the PPA
+-------------------
+
+To build the debian source package (from the debsrc directory):
+
+    debuild -S -sa -k438FA5EE
+
+To upload to the DC2 PPA (from the top-level DC2-boot directory):
+
+    dput ppa:dick-x/dc2 dc2-boot_1.0-0_source.changes
