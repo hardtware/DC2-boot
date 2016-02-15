@@ -7,7 +7,7 @@ Standards-Version: 3.9.4
 Homepage: https://github.com/hardtware/DC2-boot
 
 Package: dc2-boot
-Architecture: any
+Architecture: all
 Depends: nodejs
 Description: DC2 Boot NodeJS Application
  Provides a nodejs application for managing DC2 machines from Hardtware.
