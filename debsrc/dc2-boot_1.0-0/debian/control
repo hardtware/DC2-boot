@@ -1,0 +1,13 @@
+Source: dc2-boot
+Section: unknown
+Priority: required
+Maintainer: Dick Hardt <dick@hardtware.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.4
+Homepage: https://github.com/hardtware/DC2-boot
+
+Package: dc2-boot
+Architecture: any
+Depends: nodejs
+Description: DC2 Boot NodeJS Application
+ Provides a nodejs application for managing DC2 machines from Hardtware.
