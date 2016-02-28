@@ -1,10 +1,39 @@
 Maintaining the PPA
 -------------------
 
-To build the debian source package (from the debsrc directory):
+To build the debian source package (from the top level DC2-boot directory):
 
     debuild -S -sa -k438FA5EE
 
-To upload to the DC2 PPA (from the top-level DC2-boot directory):
+    (this places the source files in the parent directory)
 
-    dput ppa:dick-x/dc2 dc2-boot_1.0-0_source.changes
+
+To upload to the DC2 PPA:
+
+    dput ppa:dick-x/dc2 ../dc2-boot_1.0.1_source.changes
+
+
+Other useful package maintenance commands
+-----------------------------------------
+
+To build the debian binary package (from the top level DC2-boot directory):
+
+    debuild -S -sa -k438FA5EE
+
+    (this places the .deb file in the parent directory)
+
+To clean up after yourself:
+
+    debuild clean
+
+To install the binary .deb manually:
+
+    sudo dpkg --install ../dc2-boot_1.0.1_all.deb
+
+To remove the binary manually:
+
+    sudo dpkg --remove dc2-boot
+
+To add a new version (update version number accordingly):
+
+    dch -v 1.0.2

@@ -1,3 +1,0 @@
-#!/bin/sh
-adduser --quiet --system --no-create-home --group --home /home/dc2-boot dc2-boot
-

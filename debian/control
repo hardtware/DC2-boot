@@ -2,12 +2,14 @@ Source: dc2-boot
 Section: admin
 Priority: required
 Maintainer: Dick Hardt <dick@hardtware.com>
-Build-Depends: debhelper (>=9)
+Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.4
 Homepage: https://github.com/hardtware/DC2-boot
+#Vcs-Git: git://git.debian.org/collab-maint/dc2-boot.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/dc2-boot.git;a=summary
 
 Package: dc2-boot
 Architecture: all
-Depends: nodejs
+Depends: nodejs, ${misc:Depends}
 Description: DC2 Boot NodeJS Application
  Provides a nodejs application for managing DC2 machines from Hardtware.

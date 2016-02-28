@@ -1,6 +1,0 @@
-#!/bin/sh
-if [ "$1" = "remove" ]; then
-  service dc2-boot stop
-  update-rc.d -f dc2-boot remove
-fi
-

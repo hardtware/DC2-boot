@@ -1,3 +1,9 @@
+dc2-boot (1.0.1) trusty; urgency=high
+
+  * Rewrite debian source package as native package format.
+
+ -- Dick Hardt <dick@hardtware.com>  Sun, 28 Feb 2016 08:17:56 -0800
+
 dc2-boot (1.0-1) trusty; urgency=medium
 
   * Updates to debian source package configuration.
